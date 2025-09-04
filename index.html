@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amna's To-Do App</title>
+  <style>
+    body { font-family: Arial; background:#f4f4f9; display:flex; justify-content:center; align-items:center; height:100vh; margin:0;}
+    .container { background:#fff; padding:30px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1); width:100%; max-width:400px; text-align:center;}
+    h1 { margin-bottom:20px; color:#333; }
+    input { padding:10px; width:70%; border:1px solid #ccc; border-radius:5px; margin-right:5px; }
+    button { padding:10px 15px; border:none; background:#0078D7; color:#fff; border-radius:5px; cursor:pointer; }
+    button:hover { background:#005a9e; }
+    ul { list-style:none; padding:0; margin-top:20px; }
+    li { padding:10px; background:#f0f0f0; margin-bottom:5px; border-radius:5px; text-align:left; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Amna's To-Do App</h1>
+    <input id="taskInput" type="text" placeholder="Add a task">
+    <button onclick="addTask()">Add</button>
+    <ul id="taskList"></ul>
+  </div>
+
+  <script>
+    function addTask() {
+      const input = document.getElementById('taskInput');
+      const value = input.value.trim();
+      if (!value) return;
+      const li = document.createElement('li');
+      li.textContent = value;
+      document.getElementById('taskList').appendChild(li);
+      input.value = '';
+    }
+  </script>
+</body>
+</html>
